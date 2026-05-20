@@ -8,7 +8,13 @@ def subtract(a, b):
     return a - b
 
 
+def multiply(a, b):
+    """乘法"""
+    return a * b
+
+
 if __name__ == "__main__":
     print("简单计算器")
     print(f"1 + 2 = {add(1, 2)}")
     print(f"5 - 3 = {subtract(5, 3)}")
+    print(f"4 × 3 = {multiply(4, 3)}")
