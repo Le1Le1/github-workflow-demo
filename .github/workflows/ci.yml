@@ -1,0 +1,25 @@
+name: CI 检查
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: 语法检查
+        run: python -m py_compile calculator.py
+
+      - name: 运行计算器
+        run: python calculator.py
